@@ -3,7 +3,6 @@ import { Scene } from "@/types/scene";
 import styled from "@emotion/styled";
 import { useContext, useEffect, useRef } from "react";
 import { CodeContext } from "../../context/code";
-import { useCtrlS } from "../../hook/useKey";
 import { WebGL } from "./webgl";
 
 const scene: Scene = {
@@ -91,11 +90,7 @@ const FloattingCanvas = styled.div`
 
 export default function Canvas() {
     const { code } = useContext(CodeContext);
-    let rawCanvas = useRef<HTMLCanvasElement>();
-
-    useCtrlS(() => {
-        alert("save");
-    });
+    let rawCanvas = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         const canvas = rawCanvas.current;

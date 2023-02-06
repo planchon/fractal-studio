@@ -16,7 +16,7 @@ const FloattingMenu = styled.div`
 export default function Menu() {
     const { view, setView } = useContext(ViewContext);
 
-    const changeView = (_, v: number) => {
+    const changeView = (_: any, v: number) => {
         switch (v) {
             case 0:
                 setView(VIEW.CODE);

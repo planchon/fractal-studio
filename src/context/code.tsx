@@ -5,7 +5,11 @@ export const CodeContext = createContext<{ code: string; setCode: any }>({
     setCode: () => {},
 });
 
-export default function CodeProvider({ children }) {
+export default function CodeProvider({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     const [code, setCode] = useState("");
 
     return (

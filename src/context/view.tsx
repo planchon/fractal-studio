@@ -10,7 +10,11 @@ export const ViewContext = createContext<{ view: VIEW; setView: any }>({
     setView: () => {},
 });
 
-export default function ViewProvider({ children }) {
+export default function ViewProvider({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     const [view, setView] = useState<VIEW>(VIEW.CODE);
 
     return (
